@@ -114,18 +114,72 @@
 
 				<!-- Docksal -->
 				<section>
-					<h2>Docksal</h2>
-					<h4><a href="https://docksal.io/">docksal.io</a></h4>
 
-					<blockquote cite="https://docksal.io/#about" class="fragment">
-						&ldquo;Docksal is a tool for defining and managing development
-						environments. It brings together common tools, minimizes
-						configuration, and ensures environment consistency throughout your
-						continuous integration workflow.&rdquo;
-					</blockquote>
-					<p>
-						<small class="fragment">TL;DR: Docker based development environment.</small>
-					</p>
+					<!-- Overview -->
+					<section>
+						<h2>Docksal</h2>
+						<h4><a href="https://docksal.io/">docksal.io</a></h4>
+
+						<blockquote cite="https://docksal.io/#about" class="fragment">
+							&ldquo;Docksal is a tool for defining and managing development
+							environments. It brings together common tools, minimizes
+							configuration, and ensures environment consistency throughout your
+							continuous integration workflow.&rdquo;
+						</blockquote>
+						<p>
+							<small class="fragment">TL;DR: Docker based development environment.</small>
+						</p>
+					</section>
+
+					<!-- Docksal - .docksal/docksal.yml -->
+					<section>
+						<h2>Docksal</h2>
+						<h4><pre>.docksal/docksal.yml</pre></h4>
+
+						<pre><code data-trim contenteditable>
+www:
+	hostname: www
+	# Build the www service from a custom Dockerfile.
+	build:
+		context: ${PROJECT_ROOT}
+		dockerfile: ${PROJECT_ROOT}/.docksal/services/www/Dockerfile
+	volumes:
+		# Project root volume
+		- project_root:/var/www:rw,nocopy
+	labels:
+		- io.docksal.virtual-host=${VIRTUAL_HOST},*.${VIRTUAL_HOST}
+		- io.docksal.project-root=${PROJECT_ROOT}
+	depends_on:
+		- api
+	dns:
+		- ${DOCKSAL_DNS1}
+		- ${DOCKSAL_DNS2}
+	ports:
+		- 80:3000
+						</code></pre>
+					</section>
+
+					<!-- Docksal - .docksal/docksal.yml -->
+					<section>
+							<h2>Docksal</h2>
+							<h4><pre>.docksal/services/www/Dockerfile</pre></h4>
+
+							<pre><code data-trim contenteditable>
+# Use Node 6 as our base service.
+FROM node:6
+
+# Configure the services environemnt variables.
+ENV HOST 0.0.0.0
+
+# Set the working directory to our copied source WWW.
+VOLUME ["/var/www"]
+WORKDIR /var/www
+
+# Set the NPM start script as our entry command.
+CMD '/var/www/.docksal/services/www/entrypoint.sh'
+							</code></pre>
+						</section>
+
 				</section>
 
 				<!-- Contenta -->
