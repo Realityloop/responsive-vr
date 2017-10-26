@@ -377,22 +377,97 @@ CMD '/var/www/.docksal/services/www/entrypoint.sh'
 
 				<!-- Vue -->
 				<section>
-					<h2>Vue</h2>
-					<h4><a href="https://vuejs.org/">vuejs.org</a></h4>
-					<div class="fragment">
-						<blockquote cite="https://vuejs.org/v2/guide/#What-is-Vue-js">
-							&ldquo;Vue (pronounced /vjuː/, like view) is a progressive
-							framework for building user interfaces.&rdquo;
-						</blockquote>
-						<blockquote cite="https://vuejs.org/v2/guide/#What-is-Vue-js">
-							&ldquo;The core library is focused on the view layer only, and is
-							easy to pick up and integrate with other libraries or existing
-							projects.&rdquo;
-						</blockquote>
-					</div>
-					<p>
-						<small class="fragment">TL;DR: Javascript framework.</small>
-					</p>
+
+					<section>
+						<h2>Vue</h2>
+						<h4><a href="https://vuejs.org/">vuejs.org</a></h4>
+						<div class="fragment">
+							<blockquote cite="https://vuejs.org/v2/guide/#What-is-Vue-js">
+								&ldquo;Vue (pronounced /vjuː/, like view) is a progressive
+								framework for building user interfaces.&rdquo;
+							</blockquote>
+							<blockquote cite="https://vuejs.org/v2/guide/#What-is-Vue-js">
+								&ldquo;The core library is focused on the view layer only, and is
+								easy to pick up and integrate with other libraries or existing
+								projects.&rdquo;
+							</blockquote>
+						</div>
+						<p>
+							<small class="fragment">TL;DR: Javascript framework.</small>
+						</p>
+					</section>
+
+					<section>
+						<h2>Vue</h2>
+						<h4><small><code>Boilerplate.vue</code></small></h4>
+
+						<pre><code class="vue" data-trim contenteditable>
+<template>
+	<div>
+		...
+	</div>
+</template>
+
+<script>
+	export default {
+		...
+	}
+</script>
+
+<style lang="scss" scoped>
+	...
+</style>
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>Vue</h2>
+						<h4><small><code>button.vue</code></small></h4>
+
+						<pre><code class="vue" data-trim contenteditable>
+<template>
+	<a-entity
+		@click="$emit('click')"
+
+		:geometry="geometry"
+		:text="`align: center; color: #FFF; font: fonts/Roboto-msdf.json; value: ${$slots.default[0].text}; width: ${width};`"
+
+		material="color: #000"></a-entity>
+</template>
+
+<script>
+export default {
+	computed: {
+		geometry () {
+			switch (this.type) {
+				case 'round':
+					return `primitive: circle; radius: ${this.width / 8}`
+
+				default:
+					return `height: 2; primitive: plane; width: ${this.width / 4}`
+			}
+		}
+	},
+
+	props: {
+		type: {
+			default: 'box'
+		},
+		width: {}
+	}
+}
+</script>
+						</code></pre>
+
+						<pre><code class="vue" data-trim contenteditable>
+<scvr-button @click="console.log('click')" type="round" width="50">Text</scvr-button>
+						</code></pre>
+
+						<pre><code class="vue" data-trim contenteditable>
+<a-entity onclick="console.log('click')" geometry="primitive: circle; radius: 6.25" text="align: center; color: #FFF; font: fonts/Roboto-msdf.json; value: 'Text'; width: 50" material="color: #000"></a-entity>
+						</code></pre>
+					</section>
+
 				</section>
 
 				<!-- Waterwheel -->
