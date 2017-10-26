@@ -131,38 +131,47 @@
 						</p>
 					</section>
 
-					<!-- Docksal - .docksal/docksal.yml -->
+					<!-- .docksal/docksal.yml -->
 					<section>
 						<h2>Docksal</h2>
-						<h4><pre>.docksal/docksal.yml</pre></h4>
+						<h4><small><code>.docksal/docksal.yml</code></small></h4>
 
 						<pre><code data-trim contenteditable>
-www:
-	hostname: www
-	# Build the www service from a custom Dockerfile.
-	build:
-		context: ${PROJECT_ROOT}
-		dockerfile: ${PROJECT_ROOT}/.docksal/services/www/Dockerfile
-	volumes:
-		# Project root volume
-		- project_root:/var/www:rw,nocopy
-	labels:
-		- io.docksal.virtual-host=${VIRTUAL_HOST},*.${VIRTUAL_HOST}
-		- io.docksal.project-root=${PROJECT_ROOT}
-	depends_on:
-		- api
-	dns:
-		- ${DOCKSAL_DNS1}
-		- ${DOCKSAL_DNS2}
-	ports:
-		- 80:3000
+version: "2.1"
+
+services:
+	cli:
+		image: docksal/cli:1.2-php7
+
+	web:
+		labels:
+			- io.docksal.virtual-host=api.${VIRTUAL_HOST}
+
+	node:
+		# Build the node service from a custom Dockerfile.
+		build:
+			context: ${PROJECT_ROOT}
+			dockerfile: ${PROJECT_ROOT}/.docksal/services/node/Dockerfile
+		volumes:
+			# Project root volume
+			- project_root:/var/www:rw,nocopy
+		labels:
+			- io.docksal.virtual-host=${VIRTUAL_HOST},*.${VIRTUAL_HOST}
+			- io.docksal.project-root=${PROJECT_ROOT}
+		dns:
+			- ${DOCKSAL_DNS1}
+			- ${DOCKSAL_DNS2}
+		depends_on:
+			- web
+		ports:
+			- "3000"
 						</code></pre>
 					</section>
 
-					<!-- Docksal - .docksal/docksal.yml -->
+					<!-- .docksal/services/node/Dockerfile -->
 					<section>
 							<h2>Docksal</h2>
-							<h4><pre>.docksal/services/www/Dockerfile</pre></h4>
+							<h4><small><code>.docksal/services/node/Dockerfile</code></small></h4>
 
 							<pre><code data-trim contenteditable>
 # Use Node 6 as our base service.
@@ -185,6 +194,7 @@ CMD '/var/www/.docksal/services/www/entrypoint.sh'
 				<!-- Contenta -->
 				<section>
 
+					<!-- Overview -->
 					<section>
 						<h2>Contenta</h2>
 						<h4><a href="http://www.contentacms.org/">contentacms.org</a></h4>
@@ -197,6 +207,7 @@ CMD '/var/www/.docksal/services/www/entrypoint.sh'
 						</p>
 					</section>
 
+					<!-- Screenshot -->
 					<section>
 						<h2>Contenta</h2>
 						<img class="stretch" data-src="images/contenta.png" />
@@ -206,16 +217,134 @@ CMD '/var/www/.docksal/services/www/entrypoint.sh'
 
 				<!-- JSON API -->
 				<section>
-					<h2>JSON API</h2>
-					<h4><a href="http://jsonapi.org/">jsonapi.org</a></h4>
-					<blockquote cite="http://jsonapi.org/format/#introduction" class="fragment">
-						&ldquo;JSON API is a specification for how a client should
-						request that resources be fetched or modified, and how a server
-						should respond to those requests.&rdquo;
-					</blockquote>
-					<p>
-						<small class="fragment">TL;DR: Specification and method of communication.</small>
-					</p>
+
+					<!-- Overview -->
+					<section>
+						<h2>JSON API</h2>
+						<h4><a href="http://jsonapi.org/">jsonapi.org</a></h4>
+						<blockquote cite="http://jsonapi.org/format/#introduction" class="fragment">
+							&ldquo;JSON API is a specification for how a client should
+							request that resources be fetched or modified, and how a server
+							should respond to those requests.&rdquo;
+						</blockquote>
+						<p>
+							<small class="fragment">TL;DR: Specification and method of communication.</small>
+						</p>
+					</section>
+
+					<section>
+						<h2>JSON API</h2>
+						<h4><small><code>/api</code></small></h4>
+
+						<pre><code class="json" data-trim contenteditable>
+{
+	"data": [],
+	"links": {
+		"self": "http:\/\/api.sc.docksal\/api",
+		"block--block": "http:\/\/api.sc.docksal\/api\/block\/block",
+		"comment_type--comment_type": "http:\/\/api.sc.docksal\/api\/comment_type\/comment_type",
+		"consumer--consumer": "http:\/\/api.sc.docksal\/api\/consumer\/consumer",
+		"editor--editor": "http:\/\/api.sc.docksal\/api\/editor\/editor",
+		"entity_browser--entity_browser": "http:\/\/api.sc.docksal\/api\/entity_browser\/entity_browser",
+		"field_config--field_config": "http:\/\/api.sc.docksal\/api\/field_config\/field_config",
+		"field_storage_config--field_storage_config": "http:\/\/api.sc.docksal\/api\/field_storage_config\/field_storage_config",
+		"file--file": "http:\/\/api.sc.docksal\/api\/file\/file",
+		"filter_format--filter_format": "http:\/\/api.sc.docksal\/api\/filter_format\/filter_format",
+		"image_style--image_style": "http:\/\/api.sc.docksal\/api\/image_style\/image_style",
+		...
+	}
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>JSON API</h2>
+						<h4><small><code>/api/node/photo</code></small></h4>
+
+						<pre><code class="json" data-trim contenteditable>
+{
+	"data": [
+		{
+			"type": "node--photo",
+			"id": "62c5ca9b-7620-4e5a-931f-f7717191ce6a",
+			"attributes": {
+				"nid": 1,
+				"uuid": "62c5ca9b-7620-4e5a-931f-f7717191ce6a",
+				"vid": 1,
+				"langcode": "en",
+				"status": true,
+				"title": "Go Back",
+				"created": 1508908727,
+				"changed": 1508908766,
+				"promote": true,
+				"sticky": false,
+				"revision_timestamp": 1508908766,
+				"revision_log": null,
+				"revision_translation_affected": true,
+				"default_langcode": true,
+				"path": null,
+				"body": null
+			},
+			"relationships": {
+				"type": {
+					"data": {
+						"type": "node_type--node_type",
+						"id": "2110590f-fa21-4c21-aea6-09bbcb69a8bf"
+					},
+					...
+	"links": {
+		"self": "http://api.stuar.tc/api/node/photo"
+	}
+}
+						</code></pre>
+					</section>
+
+					<section>
+						<h2>JSON API</h2>
+						<h4><small><code>/api/node/photo?fields[node--photo]=title,field_image&fields[file--file]=filename&include=field_image</code></small></h4>
+
+						<pre><code class="json" data-trim contenteditable>
+{
+	"data": [
+		{
+			"type": "node--photo",
+			"id": "62c5ca9b-7620-4e5a-931f-f7717191ce6a",
+			"attributes": {
+				"title": "Go Back"
+			},
+			"relationships": {
+				"field_image": {
+					"data": {
+						"type": "file--file",
+						"id": "bb2f116f-7d5b-4823-9870-e6e30675142f",
+						"meta": {
+							"alt": "Go Back",
+							"title": "",
+							"width": "2689",
+							"height": "2016"
+						}
+					},
+					"links": {
+						"self": "http://api.stuar.tc/api/node/photo/62c5ca9b-7620-4e5a-931f-f7717191ce6a/relationships/field_image",
+						"related": "http://api.stuar.tc/api/node/photo/62c5ca9b-7620-4e5a-931f-f7717191ce6a/field_image"
+					}
+				}
+			},
+			...
+	"included": [
+	{
+		"type": "file--file",
+		"id": "bb2f116f-7d5b-4823-9870-e6e30675142f",
+		"attributes": {
+			"filename": "1.jpg"
+		},
+		"links": {
+			"self": "http://api.stuar.tc/api/file/file/bb2f116f-7d5b-4823-9870-e6e30675142f"
+		}
+	},
+						</code></pre>
+					</section>
+
 				</section>
 
 				<!-- Nuxt -->
