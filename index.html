@@ -9,8 +9,9 @@
 		<meta name="description" content="Decouple Drupal and Responsive VR">
 		<meta name="author" content="Stuart Clark">
 
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600|Poppins:300,400,500|Anonymous+Pro:400,700:">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/rl-white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -30,9 +31,10 @@
 
 				<!-- Introduction -->
 				<section>
+					<span class="rl-logo"></span>
 					<h1>Decoupled Drupal and Responsive VR</h1>
 					<p>
-						<small>A presentation by <a href="http://realityloop.com/bio/stuart-clark">Stuart Clark</a> / <a href="http://twitter.com/Deciher">@Decipher</a></small>
+						<h4>A presentation by <a href="http://realityloop.com/bio/stuart-clark">Stuart Clark</a> / <a href="http://twitter.com/Decipher">@Decipher</a></h4>
 					</p>
 				</section>
 
@@ -53,7 +55,7 @@
 
 					<!-- Virtual Reality -->
 					<section>
-						<h2>Virtual Reality<strike style="color: grey">loop</strike></h2>
+						<h2>Virtual Reality<span class="font-light">loop</span></h2>
 						<img class="stretch" data-src="images/teaser--vr.png" />
 					</section>
 
@@ -121,10 +123,10 @@
 						<h4><a href="https://docksal.io/">docksal.io</a></h4>
 
 						<blockquote cite="https://docksal.io/#about" class="fragment">
-							&ldquo;Docksal is a tool for defining and managing development
+							Docksal is a tool for defining and managing development
 							environments. It brings together common tools, minimizes
 							configuration, and ensures environment consistency throughout your
-							continuous integration workflow.&rdquo;
+							continuous integration workflow.
 						</blockquote>
 						<p>
 							<small class="fragment">TL;DR: Docker based development environment.</small>
@@ -189,8 +191,8 @@ CMD '/var/www/.docksal/services/www/entrypoint.sh'
 						<h2>Contenta</h2>
 						<h4><a href="http://www.contentacms.org/">contentacms.org</a></h4>
 						<blockquote cite="https://medium.com/@mateu.aguilo.bosch/contenta-makes-your-content-happy-6f76bbe0cdae#87d8" class="fragment">
-							&ldquo;Contenta is a Drupal distribution that gives you modern API
-							capabilities out-of-the box with JSON API.&rdquo;
+							Contenta is a Drupal distribution that gives you modern API
+							capabilities out-of-the box with JSON API.
 						</blockquote>
 						<p>
 							<small class="fragment">TL;DR: Decoupled Drupal w/ JSON API.</small>
@@ -209,9 +211,9 @@ CMD '/var/www/.docksal/services/www/entrypoint.sh'
 					<h2>JSON API</h2>
 					<h4><a href="http://jsonapi.org/">jsonapi.org</a></h4>
 					<blockquote cite="http://jsonapi.org/format/#introduction" class="fragment">
-						&ldquo;JSON API is a specification for how a client should
+						JSON API is a specification for how a client should
 						request that resources be fetched or modified, and how a server
-						should respond to those requests.&rdquo;
+						should respond to those requests.
 					</blockquote>
 					<p>
 						<small class="fragment">TL;DR: Specification and method of communication.</small>
@@ -223,7 +225,7 @@ CMD '/var/www/.docksal/services/www/entrypoint.sh'
 					<h2>Nuxt</h2>
 					<h4><a href="https://nuxtjs.org">nuxtjs.org</a></h4>
 					<blockquote cite="https://nuxtjs.org/guide#what-is-nuxt-js-" class="fragment">
-						&ldquo;Nuxt.js is a framework for creating Universal Vue.js Applications.&rdquo;
+						Nuxt.js is a framework for creating Universal Vue.js Applications.
 					</blockquote>
 					<p>
 						<small class="fragment">TL;DR: Frontend webserver.</small>
@@ -236,18 +238,18 @@ CMD '/var/www/.docksal/services/www/entrypoint.sh'
 					<h4><a href="https://vuejs.org/">vuejs.org</a></h4>
 					<div class="fragment">
 						<blockquote cite="https://vuejs.org/v2/guide/#What-is-Vue-js">
-							&ldquo;Vue (pronounced /vjuː/, like view) is a progressive
-							framework for building user interfaces.&rdquo;
+							Vue (pronounced /vjuː/, like view) is a progressive
+							framework for building user interfaces.
 						</blockquote>
 						<blockquote cite="https://vuejs.org/v2/guide/#What-is-Vue-js">
-							&ldquo;The core library is focused on the view layer only, and is
+							The core library is focused on the view layer only, and is
 							easy to pick up and integrate with other libraries or existing
-							projects.&rdquo;
+							projects.
 						</blockquote>
+						<p>
+							<small class="fragment">TL;DR: Javascript framework.</small>
+						</p>
 					</div>
-					<p>
-						<small class="fragment">TL;DR: Javascript framework.</small>
-					</p>
 				</section>
 
 				<!-- Waterwheel -->
@@ -255,8 +257,8 @@ CMD '/var/www/.docksal/services/www/entrypoint.sh'
 					<h2>Waterwheel</h2>
 					<h4><a href="https://github.com/acquia/waterwheel.js">github.com/acquia/waterwheel.js</a></h4>
 					<blockquote cite="https://github.com/acquia/waterwheel.js#waterwheel" class="fragment">
-						&ldquo;A generic JavaScript helper library to query and manipulate
-						Drupal 8 via core REST.&rdquo;
+						A generic JavaScript helper library to query and manipulate
+						Drupal 8 via core REST.
 					</blockquote>
 					<p>
 						<small class="fragment">TL;DR: Drupal 8 to JS authentication and communication.</small>
@@ -268,10 +270,10 @@ CMD '/var/www/.docksal/services/www/entrypoint.sh'
 					<h2>A-Frame</h2>
 					<h4><a href="https://aframe.io/">aframe.io</a></h4>
 					<blockquote cite="https://github.com/acquia/waterwheel.js#waterwheel" class="fragment">
-						&ldquo;A web framework for building virtual reality experiences.&rdquo;
+						A web framework for building virtual reality experiences.
 					</blockquote>
 					<p>
-						<small class="fragment">TL;DR: Virtual Reality<strike style="color: grey">loop</strike> framework.</small>
+						<small class="fragment">TL;DR: Virtual Reality<span class="font-light">loop</span> framework.</small>
 					</p>
 				</section>
 
