@@ -1649,6 +1649,24 @@ template {
 [hidden] {
   display: none; }
 
+@font-face {
+  font-family: "NTR";
+  src: url("../../fonts/NTR/NTR-regular.ttf") format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../../fonts/Poppins/Poppins-Regular.ttf") format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anonymous Pro";
+  src: url("../../fonts/Anonymous_Pro/AnonymousPro-Regular.ttf") format('truetype');
+  font-style: normal;
+}
+
 h1 {
   font-family: "NTR", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.47914em;
@@ -1761,13 +1779,13 @@ body {
     line-height: 2.25em;
     margin-bottom: 1.5em; }
   .reveal h1 {
-    font-family: "NTR";
+    font-family: "NTR", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 4em;
     font-weight: 400;
     line-height: 0.8em;
     text-transform: uppercase; }
   .reveal h2 {
-    font-family: "NTR";
+    font-family: "NTR", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 3em;
     font-weight: 400;
     line-height: 1em;
@@ -1781,7 +1799,7 @@ body {
       width: 10%;
       margin: 15px auto; }
   .reveal h4 {
-    font-family: "NTR";
+    font-family: "NTR", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.5em;
     font-weight: 400;
     line-height: 0.8em;
@@ -1813,16 +1831,30 @@ body {
     .reveal blockquote::before {
       content: '';
       display: block;
-      height: 60px;
-      width: 60px;
+      height: 30px;
+      width: 30px;
       background: url("../../images/quote.svg") no-repeat transparent right bottom;
-      margin-left: -60px; }
+      margin-left: -30px;
+      background-size: contain; }
+
+    .reveal blockquote::after {
+      content: '';
+      display: block;
+      height: 30px;
+      width: 30px;
+      background: url("../../images/quote.svg") no-repeat transparent left bottom;
+      margin-right: -30px;
+      float: right;
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+      background-size: contain; }
+
     .reveal blockquote + p {
       padding: 0 15%;
       text-align: left; }
     .reveal blockquote + p small {
-      text-transform: initial;
-      font-weight: 300;
+      font-weight: 400;
+      color: #00739d;
       display: block;
       padding-top: 10px; }
   .reveal pre {
