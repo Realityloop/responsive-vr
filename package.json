@@ -1,9 +1,8 @@
 {
-  "name": "reveal.js",
-  "version": "3.5.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://lab.hakim.se/reveal-js",
-  "subdomain": "revealjs",
+  "name": "responsive_vr",
+  "version": "0.1.0",
+  "description": "Decoupled Drupal and Responsive VR",
+  "homepage": "http://realityloop.com",
   "main": "js/reveal.js",
   "scripts": {
     "test": "grunt test",
@@ -11,13 +10,9 @@
     "build": "grunt"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "name": "Stuart Clark",
+    "email": "stuart@realityloop.com",
+    "web": "http://realityloop.com"
   },
   "engines": {
     "node": ">=4.0.0"
