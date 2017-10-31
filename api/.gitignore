@@ -1,0 +1,13 @@
+# Ignore binaries.
+/bin
+
+# Ignore non-custom parts of Drupal.
+/web/core
+/web/modules/contrib
+/web/profiles/contrib
+/web/themes/contrib
+/web/sites/default/files
+!/web/sites/default/files/.htaccess
+
+# Ignore Composer-managed dependencies.
+vendor/

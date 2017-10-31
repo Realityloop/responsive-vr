@@ -1,0 +1,25 @@
+version: "2.1"
+
+services:
+  web:
+    labels:
+      - io.docksal.virtual-host=api.${VIRTUAL_HOST}
+
+  node:
+    # Build the node service from a custom Dockerfile.
+    build:
+      context: ${PROJECT_ROOT}
+      dockerfile: ${PROJECT_ROOT}/.docksal/services/node/Dockerfile
+    volumes:
+      # Project root volume
+      - project_root:/var/www:rw,nocopy
+    labels:
+      - io.docksal.virtual-host=${VIRTUAL_HOST},*.${VIRTUAL_HOST}
+      - io.docksal.project-root=${PROJECT_ROOT}
+    dns:
+      - ${DOCKSAL_DNS1}
+      - ${DOCKSAL_DNS2}
+    depends_on:
+      - web
+    ports:
+      - "3000"
