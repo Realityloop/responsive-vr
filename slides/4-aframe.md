@@ -8,7 +8,7 @@
 --
 
 
-# A basic VR scene
+## A basic VR scene
 
 ```html
 <html>
@@ -31,4 +31,4 @@
 --
 
 
-https://aframe.glitch.me/
+<iframe class="stretch" data-src="aframe/basic.html"></iframe>
