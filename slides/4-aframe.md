@@ -32,3 +32,132 @@
 
 
 <iframe class="stretch" data-src="aframe/basic.html"></iframe>
+
+
+---
+
+
+# A-Frame tutorial
+
+## Build a scene per distinct breakpoint:
+
+* Mobile
+* Desktop
+* VR
+
+
+--
+
+
+# Mobile
+
+```html
+<a-entity position="0 1.75 -10">
+
+  <!-- Front face -->
+  <a-entity rotation="0 0 0">
+    <a-box width="4" height="3" depth="0.1" color="red" position="0 1.75 3.5" />
+    <a-box width="4" height="3" depth="0.1" color="green" position="0 -1.75 3.5" />
+  </a-entity>
+
+  <!-- Top face -->
+  <a-entity rotation="90 0 0">
+    <a-box width="4" height="3" depth="0.1" color="blue" position="0 1.75 3.5" />
+    <a-box width="4" height="3" depth="0.1" color="black" position="0 -1.75 3.5" />
+  </a-entity>
+
+  <!-- Rear face -->
+  <a-entity rotation="180 0 0">
+    <a-box width="4" height="3" depth="0.1" color="orange" position="0 1.75 3.5" />
+    <a-box width="4" height="3" depth="0.1" color="lime" position="0 -1.75 3.5" />
+  </a-entity>
+
+  <!-- Bottom face -->
+  <a-entity rotation="270 0 0">
+    <a-box width="4" height="3" depth="0.1" color="cyan" position="0 1.75 3.5" />
+    <a-box width="4" height="3" depth="0.1" color="grey" position="0 -1.75 3.5" />
+  </a-entity>
+
+</a-entity>
+```
+
+
+--
+
+
+# Mobile
+
+<iframe class="stretch" data-src="aframe/mobile.html"></iframe>
+
+
+--
+
+
+# Desktop
+
+```html
+<!-- Top row -->
+<a-box width="4" height="3" depth="0.1" color="red" position="-6.75 1.75 -10" />
+<a-box width="4" height="3" depth="0.1" color="green" position="-2.25 1.75 -10" />
+<a-box width="4" height="3" depth="0.1" color="blue" position="2.25 1.75 -10" />
+<a-box width="4" height="3" depth="0.1" color="black" position="6.75 1.75 -10" />
+
+<!-- Bottom row -->
+<a-box width="4" height="3" depth="0.1" color="orange" position="-6.75 -1.75 -10" />
+<a-box width="4" height="3" depth="0.1" color="lime" position="-2.25 -1.75 -10" />
+<a-box width="4" height="3" depth="0.1" color="cyan" position="2.25 -1.75 -10" />
+<a-box width="4" height="3" depth="0.1" color="grey" position="6.75 -1.75 -10" />
+```
+
+
+--
+
+
+# Desktop
+
+<iframe class="stretch" data-src="aframe/desktop.html"></iframe>
+
+
+--
+
+
+# VR
+
+```html
+<a-entity position="0 1.75 0">
+
+  <a-entity rotation="0 0 0">
+    <a-box width="4" height="3" depth="0.1" color="red" position="0 0 -10"/>
+  </a-entity>
+  <a-entity rotation="0 45 0">
+    <a-box width="4" height="3" depth="0.1" color="green" position="0 0 -10"/>
+  </a-entity>
+  <a-entity rotation="0 90 0">
+    <a-box width="4" height="3" depth="0.1" color="blue" position="0 0 -10"/>
+  </a-entity>
+  <a-entity rotation="0 135 0">
+    <a-box width="4" height="3" depth="0.1" color="black" position="0 0 -10"/>
+  </a-entity>
+  <a-entity rotation="0 180 0">
+    <a-box width="4" height="3" depth="0.1" color="orange" position="0 0 -10"/>
+  </a-entity>
+  <a-entity rotation="0 225 0">
+    <a-box width="4" height="3" depth="0.1" color="lime" position="0 0 -10"/>
+  </a-entity>
+  <a-entity rotation="0 270 0">
+    <a-box width="4" height="3" depth="0.1" color="cyan" position="0 0 -10"/>
+  </a-entity>
+  <a-entity rotation="0 315 0">
+    <a-box width="4" height="3" depth="0.1" color="grey" position="0 0 -10"/>
+  </a-entity>
+
+</a-entity>
+```
+
+
+--
+
+
+# VR
+
+<iframe class="stretch" data-src="aframe/vr.html"></iframe>
