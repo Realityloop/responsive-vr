@@ -1,0 +1,36 @@
+<template>
+  <a-entity position="0 1.75 0">
+
+    <a-entity rotation="0 0 0">
+      <a-box width="4" height="3" depth="0.1" color="red" position="0 0 -10"/>
+    </a-entity>
+    <a-entity rotation="0 45 0">
+      <a-box width="4" height="3" depth="0.1" color="green" position="0 0 -10"/>
+    </a-entity>
+    <a-entity rotation="0 90 0">
+      <a-box width="4" height="3" depth="0.1" color="blue" position="0 0 -10"/>
+    </a-entity>
+    <a-entity rotation="0 135 0">
+      <a-box width="4" height="3" depth="0.1" color="black" position="0 0 -10"/>
+    </a-entity>
+    <a-entity rotation="0 180 0">
+      <a-box width="4" height="3" depth="0.1" color="orange" position="0 0 -10"/>
+    </a-entity>
+    <a-entity rotation="0 225 0">
+      <a-box width="4" height="3" depth="0.1" color="lime" position="0 0 -10"/>
+    </a-entity>
+    <a-entity rotation="0 270 0">
+      <a-box width="4" height="3" depth="0.1" color="cyan" position="0 0 -10"/>
+    </a-entity>
+    <a-entity rotation="0 315 0">
+      <a-box width="4" height="3" depth="0.1" color="grey" position="0 0 -10"/>
+    </a-entity>
+
+  </a-entity>
+</template>
+
+<script>
+  export default {
+    layout: 'aframe'
+  }
+</script>

@@ -14,6 +14,10 @@ module.exports = {
     ]
   },
   /*
+  ** Disable server side rendering
+  */
+  mode: 'spa',
+  /*
   ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
@@ -33,6 +37,25 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
-  }
+    },
+    /*
+    ** Third party libraries
+    */
+    vendor: [
+      'aframe',
+      'axios'
+    ]
+  },
+  /*
+  ** Modules
+  */
+  modules: [
+    '@nuxtjs/bootstrap-vue',
+  ],
+  /*
+  ** Plugins
+  */
+  plugins: [
+    '~/components'
+  ]
 }
