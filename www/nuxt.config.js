@@ -56,6 +56,7 @@ module.exports = {
   ** Plugins
   */
   plugins: [
-    '~/components'
+    '~/components',
+    '~/plugins/v-media-query'
   ]
 }

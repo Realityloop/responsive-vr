@@ -34,6 +34,18 @@
       </b-list-group>
     </b-card>
 
+    <!-- Step 3 - Responsive VR -->
+    <b-card title="3 - Responsive VR">
+      <p class="card-text">
+        Making it responsive.
+      </p>
+      <b-list-group>
+        <b-list-group-item>
+          <nuxt-link to="/step3/framework">Framework demo</nuxt-link>
+        </b-list-group-item>
+      </b-list-group>
+    </b-card>
+
   </b-card-group>
 </template>
 
