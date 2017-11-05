@@ -42,14 +42,14 @@ module.exports = {
     ** Third party libraries
     */
     vendor: [
-      'aframe',
-      'axios'
+      'aframe'
     ]
   },
   /*
   ** Modules
   */
   modules: [
+    '@nuxtjs/axios',
     '@nuxtjs/bootstrap-vue',
   ],
   /*

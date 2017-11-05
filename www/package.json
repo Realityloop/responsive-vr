@@ -13,9 +13,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^4.4.0",
     "@nuxtjs/bootstrap-vue": "^2.0.2",
     "aframe": "^0.6.1",
     "axios": "^0.16.2",
+    "build-url": "^1.0.10",
+    "jsonapi-serializer": "^3.5.5",
     "nuxt": "^1.0.0-rc11",
     "v-media-query": "^1.0.3"
   },
