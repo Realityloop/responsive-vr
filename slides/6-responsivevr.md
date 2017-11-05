@@ -215,20 +215,12 @@ Integrating into your a-scene.
 ```
 
 
----
-
-
-# Responsive VR concepts
-
-* Position
-* Rotation
-* Camera
-
-
 --
 
 
-# Example
+# Responsive positioning
+
+
 
 ```html
 <template>
@@ -252,6 +244,64 @@ Integrating into your a-scene.
         }
       }
     }
+  }
+</script>
+```
+
+
+---
+
+
+# Responsive Teaser.vue
+
+```html
+<template>
+  <a-entity :rotation="wrapRot" :position="wrapPos">
+    <a-box width="4" height="3" depth="0.1" :color="color" :position="teaserPos" />
+  </a-entity>
+</template>
+
+<script>
+  ...
+
+    methods: {
+      eventResponsive () {
+        ...
+
+        switch (true) {
+          // Is VR
+          case this.responsive.vr.active:
+            wrapRotX = this.delta * 45
+
+            this.wrapPos = `0 1.75 0`
+            this.wrapRot = `0 ${wrapRotX} 0 0`
+            this.teaserPos = `0 0 -10`
+            break
+
+          // Is XS
+          case this.responsive.breakpoint === 'xs':
+            let face = Math.floor(this.delta / 2)
+            teaserPosY = 1.75 - (this.delta % 2) * 3.5
+            wrapRotY = face * 90
+
+            this.wrapPos = `0 1.75 -10`
+            this.wrapRot = `${wrapRotY} 0 0`
+            this.teaserPos = `0 ${teaserPosY} 3.5`
+            break
+
+          // Is > XS
+          default:
+            teaserPosX = -6.75 + (this.delta % 4) * 4.5
+            teaserPosY = this.delta > 3 ? -1.75 : 1.75
+
+            this.wrapPos = `0 0 0`
+            this.wrapRot = `${wrapRotY} 0 0`
+            this.teaserPos = `${teaserPosX} ${teaserPosY} -10`
+        }
+      }
+    },
+
+    ...
   }
 </script>
 ```
