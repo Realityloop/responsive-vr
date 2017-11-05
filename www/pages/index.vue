@@ -46,6 +46,9 @@
         <b-list-group-item>
           <nuxt-link to="/step3/basic">Basic demo</nuxt-link>
         </b-list-group-item>
+        <b-list-group-item>
+          <nuxt-link to="/step3/view">Responsive teasers</nuxt-link>
+        </b-list-group-item>
       </b-list-group>
     </b-card>
 
