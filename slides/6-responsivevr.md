@@ -213,3 +213,45 @@ Integrating into your a-scene.
 </script>
 
 ```
+
+
+---
+
+
+# Responsive VR concepts
+
+* Position
+* Rotation
+* Camera
+
+
+--
+
+
+# Example
+
+```html
+<template>
+  <a-entity :position="position(delta)" />
+</template>
+
+<script>
+  export default {
+    ...
+
+    methods: {
+      position (delta) {
+        switch (true) {
+          // Is VR
+          case this.responsive.vr.active:
+            return `${2.25 - (delta * 4.5)} 0 -10`
+
+          // Not VR
+          default:
+            return `${-2.25 + (delta * 4.5)} 0 -10`
+        }
+      }
+    }
+  }
+</script>
+```
