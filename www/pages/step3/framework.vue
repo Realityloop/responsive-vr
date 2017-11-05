@@ -1,21 +1,18 @@
 <template>
-  <a-scene @enter-vr="enter()" @exit-vr="exit()">
-    <a-sky color="white" />
-    <a-text
-      :value="text()"
+  <a-text
+    :value="text"
 
-      align="center"
-      color="black"
-      position="0 0 -10"
-      width="50" />
-  </a-scene>
+    align="center"
+    color="black"
+    position="0 0 -10"
+    width="50" />
 </template>
 
 <script>
-  import { mapMutations, mapState } from 'vuex'
+  import {mapState} from 'vuex'
 
   export default {
-    layout: 'raw',
+    layout: 'responsivevr',
 
     computed: {
       ...mapState({
@@ -23,50 +20,31 @@
       })
     },
 
+    data () {
+      return {
+        text: false
+      }
+    },
+
     methods: {
-      enter () {
-        this.responsiveVR(true)
-      },
-
-      exit () {
-        this.responsiveVR(false)
-      },
-
-      resize () {
-        this.responsiveBreakpoint(this)
-      },
-
-      text () {
+      textResponsive () {
         switch (true) {
           case this.responsive.vr.mobile:
-            return 'vr:mobile'
+            this.text = 'vr:mobile'
+            break
 
           case this.responsive.vr.desktop:
-            return 'vr:desktop'
+            this.text = 'vr:desktop'
+            break
 
           default:
-            return this.responsive.breakpoint
+            this.text = this.responsive.breakpoint
         }
-      },
-
-      ...mapMutations({
-        responsiveBreakpoint: 'responsive/breakpointSet',
-        responsiveVR: 'responsive/vrSet'
-      })
+      }
     },
 
     watch: {
-      '$mq.resize': 'resize'
-    },
-
-    mounted () {
-      this.resize()
+      'responsive.changed': 'textResponsive'
     }
   }
 </script>
-
-<style>
-  html, body, #__nuxt, #app {
-    height: 100%;
-  }
-</style>
