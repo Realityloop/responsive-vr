@@ -49,7 +49,7 @@ Build components for each distinct element:
 
 * Teaser
 * View
-* Full
+* Full <!-- .element: class="fragment" -->
 * Navigation <!-- .element: class="fragment" -->
 * Button <!-- .element: class="fragment" -->
 * Text <!-- .element: class="fragment" -->
@@ -103,16 +103,5 @@ Build components for each distinct element:
     }
   }
 </script>
-
-```
-
-
---
-
-
-# Page.vue
-
-```html
-
 
 ```
