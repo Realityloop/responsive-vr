@@ -16,6 +16,10 @@ body {
 }
 
 .reveal {
+    background-image: url('../../images/loop.svg');
+    background-position: 118% 125%;
+    background-repeat: no-repeat;
+    background-size: 52%;
     font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1em;
     font-weight: normal;
@@ -298,40 +302,41 @@ body {
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
+.reveal .controls button {
+    background-image: url('../../images/arrow.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    display: block;
+    height: 30px;
+    width: 30px;
+}
+
 .reveal .controls .navigate-left,
 .reveal .controls .navigate-left.enabled {
-    border-right-color: #2a76dd;
+    left: 10px;
+    top: 40px;
+    transform: rotate(-90deg);
 }
 
 .reveal .controls .navigate-right,
 .reveal .controls .navigate-right.enabled {
-    border-left-color: #2a76dd;
+    left: 70px;
+    top: 40px;
+    transform: rotate(90deg);
 }
 
 .reveal .controls .navigate-up,
 .reveal .controls .navigate-up.enabled {
-    border-bottom-color: #2a76dd;
+    left: 40px;
+    top: 10px;
 }
 
 .reveal .controls .navigate-down,
 .reveal .controls .navigate-down.enabled {
-    border-top-color: #2a76dd;
-}
-
-.reveal .controls .navigate-left.enabled:hover {
-    border-right-color: #6ca0e8;
-}
-
-.reveal .controls .navigate-right.enabled:hover {
-    border-left-color: #6ca0e8;
-}
-
-.reveal .controls .navigate-up.enabled:hover {
-    border-bottom-color: #6ca0e8;
-}
-
-.reveal .controls .navigate-down.enabled:hover {
-    border-top-color: #6ca0e8;
+    left: 40px;
+    top: 70px;
+    transform: rotate(180deg);
 }
 
 /*********************************************
