@@ -1,4 +1,4 @@
-# JSON API
+## JSON API
 
 [jsonapi.org](http://jsonapi.org/)
 
@@ -11,7 +11,7 @@ _TL;DR: Specification and method of communication._
 --
 
 
-# /api
+## /api
 
 ```json
 {
@@ -27,7 +27,7 @@ _TL;DR: Specification and method of communication._
 --
 
 
-# /api/recipes
+## /api/recipes
 
 ```json
 {
@@ -52,7 +52,7 @@ _TL;DR: Specification and method of communication._
 --
 
 
-# Documentation
+## Documentation
 
 https://www.drupal.org/project/jsonapi
 
@@ -76,7 +76,7 @@ include=image
 ---
 
 
-# JSON API Tutorial
+## JSON API Tutorial
 
 * Filter data
 * Store data
@@ -86,7 +86,7 @@ include=image
 --
 
 
-# Filter data
+## Filter data
 
 * Items: 8
 * Fields:
@@ -117,7 +117,7 @@ http://api.responsivevr.docksal/api/recipes?page[limit]=8&include=image,image.th
 --
 
 
-# Store data
+## Store data
 
 ```javascript
 export default {
@@ -153,7 +153,7 @@ export default {
 --
 
 
-# Display data
+## Display data
 
 ```html
 <template>

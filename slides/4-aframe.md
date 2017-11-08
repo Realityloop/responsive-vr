@@ -1,4 +1,4 @@
-# A-Frame
+## A-Frame
 
 [aframe.io](https://aframe.io/)
 
@@ -37,9 +37,9 @@
 ---
 
 
-# A-Frame tutorial
+## A-Frame tutorial
 
-## Build a scene per distinct breakpoint:
+### Build a scene per distinct breakpoint:
 
 * Mobile
 * Desktop
@@ -49,7 +49,15 @@
 --
 
 
-# Mobile
+## Mobile - Demo
+
+<iframe class="stretch" data-src="aframe/mobile.html"></iframe>
+
+
+--
+
+
+## Mobile - Source
 
 ```html
 <a-entity position="0 1.75 -10">
@@ -85,15 +93,15 @@
 --
 
 
-# Mobile
+## Desktop - Demo
 
-<iframe class="stretch" data-src="aframe/mobile.html"></iframe>
+<iframe class="stretch" data-src="aframe/desktop.html"></iframe>
 
 
 --
 
 
-# Desktop
+## Desktop - Source
 
 ```html
 <!-- Top row -->
@@ -113,15 +121,15 @@
 --
 
 
-# Desktop
+## VR - Demo
 
-<iframe class="stretch" data-src="aframe/desktop.html"></iframe>
+<iframe class="stretch" data-src="aframe/vr.html"></iframe>
 
 
 --
 
 
-# VR
+## VR - Source
 
 ```html
 <a-entity position="0 1.75 0">
@@ -153,11 +161,3 @@
 
 </a-entity>
 ```
-
-
---
-
-
-# VR
-
-<iframe class="stretch" data-src="aframe/vr.html"></iframe>

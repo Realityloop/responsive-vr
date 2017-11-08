@@ -1,4 +1,4 @@
-# Vue
+## Vue
 
 [vuejs.org](https://vuejs.org/)
 
@@ -12,7 +12,7 @@ _TL;DR: Javascript framework._
 --
 
 
-A basic component.
+## A basic component.
 
 
 `component.vue`
@@ -43,7 +43,7 @@ A basic component.
 ---
 
 
-# Vue tutorial
+## Vue tutorial
 
 Build components for each distinct element:
 
@@ -58,7 +58,7 @@ Build components for each distinct element:
 --
 
 
-# Teaser.vue
+## Teaser.vue
 
 ```html
 <template>
@@ -82,7 +82,7 @@ Build components for each distinct element:
 --
 
 
-# View.vue
+## View.vue
 
 ```html
 <template>

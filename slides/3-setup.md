@@ -1,4 +1,4 @@
-# Follow along
+## Follow along
 
 1. (Optional) [Install docksal](http://docksal.readthedocs.io/en/master/getting-started/env-setup):
 ```bash

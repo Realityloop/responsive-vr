@@ -1,111 +1,116 @@
 <!doctype html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Decoupled Drupal and Responsive VR</title>
+  <title>Decoupled Drupal and Responsive VR</title>
 
-		<meta name="description" content="Decouple Drupal and Responsive VR">
-		<meta name="author" content="Stuart Clark">
+  <meta name="description" content="Decouple Drupal and Responsive VR">
+  <meta name="author" content="Stuart Clark">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/realityloop.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/realityloop.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
 
-		<!-- A-Frame VR -->
-		<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-	</head>
+  <!-- A-Frame VR -->
+  <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+</head>
 
-	<body>
-		<div class="reveal">
-			<div class="slides">
+<body>
+<a href="http://realityloop.com" id="logo"><img src="images/realityloop.svg"/></a>
+<div class="reveal">
+  <div class="slides">
 
-				<!-- Opening slide -->
-				<section data-markdown="slides/0-title.md"></section>
+    <!-- Opening slide -->
+    <section data-markdown="slides/0-title.md"></section>
 
-				<!-- Introduction - What's it all about? -->
-				<section
-					data-markdown="slides/1-intro.md"
-					data-separator-vertical="^\n\n--\n\n$">
-				</section>
+    <!-- Introduction - What's it all about? -->
+    <section
+      data-markdown="slides/1-intro.md"
+      data-separator-vertical="^\n\n--\n\n$">
+    </section>
 
-				<!-- Introduction - Demonstration -->
-				<section
-					data-markdown="slides/2-demo.md"
-					data-separator-vertical="^\n\n--\n\n$">
-				</section>
+    <!-- Introduction - Demonstration -->
+    <section
+      data-markdown="slides/2-demo.md"
+      data-separator-vertical="^\n\n--\n\n$">
+    </section>
 
-				<!-- Tutorial - Setup -->
-				<section
-					data-markdown="slides/3-setup.md"
-					data-separator-vertical="^\n\n--\n\n$">
-				</section>
+    <!-- Tutorial - Setup -->
+    <section
+      data-markdown="slides/3-setup.md"
+      data-separator-vertical="^\n\n--\n\n$">
+    </section>
 
-				<!-- Tutorial - A-Frame -->
-				<section
-					data-markdown="slides/4-aframe.md"
-					data-separator-vertical="^\n\n--\n\n$">
-				</section>
+    <!-- Tutorial - A-Frame -->
+    <section
+      data-markdown="slides/4-aframe.md"
+      data-separator-vertical="^\n\n--\n\n$">
+    </section>
 
-				<!-- Tutorial - Vue -->
-				<section
-					data-markdown="slides/5-vue.md"
-					data-separator-vertical="^\n\n--\n\n$">
-				</section>
+    <!-- Tutorial - Vue -->
+    <section
+      data-markdown="slides/5-vue.md"
+      data-separator-vertical="^\n\n--\n\n$">
+    </section>
 
-				<!-- Tutorial - Responsive VR -->
-				<section
-					data-markdown="slides/6-responsivevr.md"
-					data-separator-vertical="^\n\n--\n\n$">
-				</section>
+    <!-- Tutorial - Responsive VR -->
+    <section
+      data-markdown="slides/6-responsivevr.md"
+      data-separator-vertical="^\n\n--\n\n$">
+    </section>
 
-				<!-- Tutorial - JSON API -->
-				<section
-					data-markdown="slides/7-jsonapi.md"
-					data-separator-vertical="^\n\n--\n\n$">
-				</section>
+    <!-- Tutorial - JSON API -->
+    <section
+      data-markdown="slides/7-jsonapi.md"
+      data-separator-vertical="^\n\n--\n\n$">
+    </section>
 
-				<!-- Tutorial - Demonstration -->
-				<section
-					data-markdown="slides/8-demo.md"
-					data-separator-vertical="^\n\n--\n\n$">
-				</section>
+    <!-- Tutorial - Demonstration -->
+    <section
+      data-markdown="slides/8-demo.md"
+      data-separator-vertical="^\n\n--\n\n$">
+    </section>
 
-				<!-- Ending slides -->
-				<section
-					data-markdown="slides/9-end.md"
-					data-separator-vertical="^\n\n--\n\n$">
-				</section>
+    <!-- Ending slides -->
+    <section
+      data-markdown="slides/9-end.md"
+      data-separator-vertical="^\n\n--\n\n$">
+    </section>
 
-			</div>
-		</div>
+  </div>
+</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
 
-		<script>
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+<script>
+  Reveal.initialize({
+    dependencies: [
+      {src: 'plugin/markdown/marked.js'},
+      {src: 'plugin/markdown/markdown.js'},
+      {src: 'plugin/notes/notes.js', async: true},
+      {
+        src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+          hljs.initHighlightingOnLoad();
+        }
+      }
+    ]
+  });
+</script>
+</body>
 
 </html>

@@ -4,7 +4,7 @@
 --
 
 
-# Resources
+## Resources
 
 |                       |                                                      |
 | ---                   | ---                                                  |
@@ -18,7 +18,7 @@
 --
 
 
-# Credits
+## Credits
 
 |                       |                                                 |
 | ---                   | ---                                             |

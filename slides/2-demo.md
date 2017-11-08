@@ -1,6 +1,6 @@
-# Demo time
+## Demo time
 
-## SCVR (Stuart Clark Virtual Reality)
+### SCVR (Stuart Clark Virtual Reality)
 
 [stuar.tc](http://stuar.tc)
 

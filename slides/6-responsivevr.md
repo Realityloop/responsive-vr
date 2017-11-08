@@ -1,4 +1,4 @@
-# Responsive VR
+## Responsive VR
 
 Building a Responsive VR Vue plugin.
 
@@ -9,7 +9,7 @@ Building a Responsive VR Vue plugin.
 --
 
 
-# AFRAME
+## AFRAME
 
 https://aframe.io/docs
 
@@ -28,7 +28,7 @@ AFRAME.utils.device.isMobile()
 --
 
 
-# v-media-query
+## v-media-query
 
 https://github.com/AStaroverov/v-media-query
 
@@ -47,7 +47,7 @@ if (this.$mq.above(575)) {
 ---
 
 
-# Responsive VR Tutorial
+## Responsive VR Tutorial
 
 * v-media-query
 * Responsive VUEX store
@@ -57,7 +57,7 @@ if (this.$mq.above(575)) {
 --
 
 
-# v-media-query.js
+## v-media-query.js
 
 Register and configure the v-media-query plugin.
 
@@ -79,7 +79,7 @@ Vue.use(vMediaQuery, {
 --
 
 
-# responsive.js
+## responsive.js
 
 Responsive VR helper utility.
 
@@ -131,7 +131,7 @@ export const mutations = {
 --
 
 
-# example.vue
+## example.vue
 
 Integrating into your a-scene.
 
@@ -218,7 +218,7 @@ Integrating into your a-scene.
 --
 
 
-# Responsive positioning
+## Responsive positioning
 
 
 
@@ -252,7 +252,7 @@ Integrating into your a-scene.
 ---
 
 
-# Responsive Teaser.vue
+## Responsive Teaser.vue
 
 ```html
 <template>
