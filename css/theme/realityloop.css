@@ -11,13 +11,16 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  * GLOBAL STYLES
  *********************************************/
 body {
-    background: #fff;
     background-color: #fff;
+    color: #4a4e5a;
+    font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    font-weight: normal;
 }
 
-#logo {
+header {
     left: 20px;
-    position: relative;
+    position: absolute;
     top: 20px;
     z-index: 100;
 }
@@ -27,10 +30,13 @@ body {
     background-position: 118% 125%;
     background-repeat: no-repeat;
     background-size: 52%;
-    font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1em;
-    font-weight: normal;
-    color: #4a4e5a;
+}
+
+footer {
+    left: 20px;
+    position: absolute;
+    bottom: 20px;
+    z-index: 100;
 }
 
 ::selection {
@@ -177,7 +183,7 @@ body {
     margin: 20px auto;
     padding: 0 15%;
     position: relative;
-    text-align: justify;
+    text-align: center;
     width: 70%;
 }
 
@@ -290,7 +296,7 @@ body {
 /*********************************************
  * LINKS
  *********************************************/
-.reveal a {
+a {
     color: #00739d;
     text-decoration: none;
     -webkit-transition: color .15s ease;
@@ -298,13 +304,13 @@ body {
     transition: color .15s ease;
 }
 
-.reveal a:hover {
+a:hover {
     color: #00739d;
     text-shadow: none;
     border: none;
 }
 
-.reveal .roll span:after {
+.roll span:after {
     color: #fff;
     background: #1a53a1;
 }
