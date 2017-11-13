@@ -1,3 +1,12 @@
+# Ideas / Thoughts
+
+- Should/Could a traditional website be built in VR? <!-- .element: class="fragment" -->
+- Games/Interactive experiences with Drupal and VR? <!-- .element: class="fragment" -->
+
+
+--
+
+
 # Questions?
 
 
@@ -6,13 +15,13 @@
 
 ## Resources
 
-|                       |                                                      |
-| ---                   | ---                                                  |
-| **Slides / Tutorial** | https://realityloop.github.io/responsive_vr--slides/ |
-|                       |                                                      |
-| **A-Frame**           | http://aframe.io                                     |
-| **Contenta CMS**      | http://www.contentacms.org/                          |
-| **Vue**               | https://vuejs.org/                                   |
+|                       |                                             |
+| ---                   | ---                                         |
+| **Slides / Tutorial** | https://realityloop.github.io/responsive-vr |
+|                       |                                             |
+| **A-Frame**           | http://aframe.io                            |
+| **Contenta CMS**      | http://www.contentacms.org/                 |
+| **Vue**               | https://vuejs.org/                          |
 
 
 --
