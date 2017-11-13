@@ -39,6 +39,8 @@ _TL;DR: Javascript framework._
 </style>
 ```
 
+[vuejs.org/v2/guide](https://vuejs.org/v2/guide/)
+
 
 ---
 
@@ -49,34 +51,10 @@ Build components for each distinct element:
 
 * Teaser
 * View
-* Full <!-- .element: class="fragment" -->
-* Navigation <!-- .element: class="fragment" -->
-* Button <!-- .element: class="fragment" -->
-* Text <!-- .element: class="fragment" -->
-
-
---
-
-
-## Teaser.vue
-
-```html
-<template>
-  <a-entity :rotation="rotation()">
-    <a-box width="4" height="3" depth="0.1" :color="color" position="0 0 -10" />
-  </a-entity>
-</template>
-
-<script>
-  export default {
-    methods: {
-      rotation () { return `0 ${this.delta * -45} 0` }
-    },
-    props: { 'color': { default: 'red' }, 'delta': { default: 0 } }
-  }
-</script>
-
-```
+* Full <!-- .element: class="fragment" data-fragment-index="1"  -->
+* Navigation <!-- .element: class="fragment" data-fragment-index="1" -->
+* Button <!-- .element: class="fragment" data-fragment-index="1" -->
+* Text <!-- .element: class="fragment" data-fragment-index="1" -->
 
 
 --
@@ -86,21 +64,53 @@ Build components for each distinct element:
 
 ```html
 <template>
-  <a-entity>
+  <!-- If items... -->
+  <a-entity v-if="items">
+    <!-- Render a Teaser component per item, passing in required properties. -->
     <teaser v-for="(item, delta) in items" :color="item.color" :key="delta" :delta="delta" />
   </a-entity>
 </template>
 
 <script>
+  // Import teaser component.
   import Teaser from './teaser.vue'
 
   export default {
+    // Register components.
     components: { Teaser },
     data () {
       return {
+        // Hardcoded items array.
         items: [ { color: 'red' }, { color: 'green' }, { color: 'blue' } ]
       }
     }
+  }
+</script>
+```
+
+
+--
+
+
+## Teaser.vue
+
+```html
+<template>
+  <!-- Calculate wrapper rotation property. -->
+  <a-entity :rotation="rotation()">
+    <!-- Color passed in by View component. -->
+    <a-box width="4" height="3" depth="0.1" :color="color" position="0 0 -10" />
+  </a-entity>
+</template>
+
+<script>
+  export default {
+    methods: {
+      // Calculate rotation based on delta.
+      rotation () { return `0 ${this.delta * -45} 0` }
+    },
+    // Define properties and their default values.
+    props: { 'color': { default: 'red' }, 'delta': { default: 0 } }
   }
 </script>
 

@@ -4,6 +4,13 @@
 
 > A web framework for building virtual reality experiences.
 
+Note:
+- Part 1 - VR, the fun stuff
+- A-Frame is a javascript library
+- Adds HTML tags for building VR scenes
+- Uses Three JS under the hood
+- Cross platform: Vive, Rift, Daydream, Cardboard, etc, Desktop and Mobile
+
 
 --
 
@@ -26,6 +33,8 @@
   </body>
 </html>
 ```
+
+[aframe.io/docs](https://aframe.io/docs)
 
 
 --

@@ -13,3 +13,6 @@ fin init
 ```
 
 3. Visit: http://responsivevr.docksal
+
+4. Slides on `gh-pages` branch.
+

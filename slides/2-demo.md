@@ -1,10 +1,6 @@
 ## Demo time
 
-### SCVR (Stuart Clark Virtual Reality)
+### SCVR: http://stuar.tc <!-- .element: target="blank" -->
 
-[stuar.tc](http://stuar.tc)
+Source: https://github.com/Decipher/stuar.tc
 
-
---
-
-@TODO - Add a video demonstration for backup.

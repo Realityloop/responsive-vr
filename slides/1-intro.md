@@ -1,7 +1,7 @@
 ## What's it all about?
 
-* Responsive VR <!-- .element: class="fragment" -->
-* Decoupled Drupal <!-- .element: class="fragment" -->
+* Responsive VR <!-- .element: class="fragment" data-fragment-index="1" -->
+* Decoupled Drupal <!-- .element: class="fragment" data-fragment-index="1" -->
 
 
 --

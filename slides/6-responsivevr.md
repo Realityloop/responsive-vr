@@ -92,37 +92,38 @@ export const state = () => ({
     active: false,
     desktop: false,
     mobile: false
-  }
+  },
+  changed: new Date()
 })
 
 export const mutations = {
   breakpointSet (state, { $mq, $mv }) {
-    switch (true) {
-      case $mq.below($mv.sm):
-        state.breakpoint = 'xs'
-        break
+    let orig = state.breakpoint
 
-      case $mq.below($mv.md):
-        state.breakpoint = 'sm'
+    let breakpoints = ['xs', 'sm', 'md', 'lg', 'xl']
+    for (let i in breakpoints) {
+      if ($mq.below($mv[breakpoints[parseInt(i) + 1]]) && breakpoints[i] !== 'xl') {
+        state.breakpoint = breakpoints[i]
         break
+      }
+      state.breakpoint = 'xl'
+    }
 
-      case $mq.below($mv.lg):
-        state.breakpoint = 'md'
-        break
-
-      case $mq.below($mv.xl):
-        state.breakpoint = 'lg'
-        break
-
-      default:
-        state.breakpoint = 'xl'
+    if (orig !== state.breakpoint) {
+      state.changed = new Date()
     }
   },
 
   vrSet (state, value) {
+    let orig = state.vr.active
+
     state.vr.active = value
     state.vr.desktop = value && !AFRAME.utils.device.isMobile()
     state.vr.mobile = value && AFRAME.utils.device.isMobile()
+
+    if (orig !== state.vr.active) {
+      state.changed = new Date()
+    }
   }
 }
 ```
@@ -134,6 +135,8 @@ export const mutations = {
 ## example.vue
 
 Integrating into your a-scene.
+
+[/step3/framework](http://localhost:3000/step3/framework) <!-- .element: target="blank" -->
 
 ```html
 <template>
@@ -218,9 +221,10 @@ Integrating into your a-scene.
 --
 
 
-## Responsive positioning
+## Responsive example
 
 
+[/step3/basic](http://localhost:3000/step3/basic) <!-- .element: target="blank" -->
 
 ```html
 <template>
@@ -253,6 +257,8 @@ Integrating into your a-scene.
 
 
 ## Responsive Teaser.vue
+
+[/step3/view](http://localhost:3000/step3/view) <!-- .element: target="blank" -->
 
 ```html
 <template>
