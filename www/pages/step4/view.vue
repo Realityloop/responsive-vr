@@ -1,5 +1,5 @@
 <template>
-  <a-entity>
+  <a-entity v-if="items" >
     <teaser
       v-for="(item, delta) in items"
 

@@ -1,7 +1,13 @@
 <template>
   <a-entity :rotation="wrapRot" :position="wrapPos">
     <a-entity :position="teaserPos">
-      <a-image :src="image" />
+      <a-plane width="4.15" height="3.15" color="black" position="0 0 -0.025" />
+      <a-plane width="4.1" height="3.1" color="white" position="0 0 -0.0125" />
+
+      <a-plane width="4" height="0.75" color="black" position="0 -1.125 0.005" />
+      <a-text :value="title" align="center" color="white" width="3.5" position="0 -1.125 0.0075" wrap-count="25" />
+
+      <a-image :src="image" position="0 0 0" width="4" height="3" />
     </a-entity>
   </a-entity>
 </template>
