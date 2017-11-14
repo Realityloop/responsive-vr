@@ -14,25 +14,13 @@ export const mutations = {
   breakpointSet (state, { $mq, $mv }) {
     let orig = state.breakpoint
 
-    switch (true) {
-      case $mq.below($mv.sm):
-        state.breakpoint = 'xs'
+    let breakpoints = ['xs', 'sm', 'md', 'lg', 'xl']
+    for (let i in breakpoints) {
+      if ($mq.below($mv[breakpoints[parseInt(i) + 1]]) && breakpoints[i] !== 'xl') {
+        state.breakpoint = breakpoints[i]
         break
-
-      case $mq.below($mv.md):
-        state.breakpoint = 'sm'
-        break
-
-      case $mq.below($mv.lg):
-        state.breakpoint = 'md'
-        break
-
-      case $mq.below($mv.xl):
-        state.breakpoint = 'lg'
-        break
-
-      default:
-        state.breakpoint = 'xl'
+      }
+      state.breakpoint = 'xl'
     }
 
     if (orig !== state.breakpoint) {
@@ -41,13 +29,13 @@ export const mutations = {
   },
 
   vrSet (state, value) {
-    let orig = state.active
+    let orig = state.vr.active
 
     state.vr.active = value
     state.vr.desktop = value && !AFRAME.utils.device.isMobile()
     state.vr.mobile = value && AFRAME.utils.device.isMobile()
 
-    if (orig !== state.active) {
+    if (orig !== state.vr.active) {
       state.changed = new Date()
     }
   }
