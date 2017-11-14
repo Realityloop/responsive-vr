@@ -1,5 +1,5 @@
 <template>
-  <b-navbar toggleable="md" type="dark" variant="info">
+  <b-navbar toggleable="md" type="dark" variant="dark" class="mb-4">
 
     <b-nav-toggle target="nav_collapse"></b-nav-toggle>
 
@@ -8,11 +8,8 @@
     <b-collapse is-nav id="nav_collapse">
 
       <b-nav is-nav-bar>
-        <b-nav-item-dropdown text="Step 1">
-          <b-dropdown-item><nuxt-link to="/step1/desktop">Desktop</nuxt-link></b-dropdown-item>
-          <b-dropdown-item><nuxt-link to="/step1/mobile">Mobile</nuxt-link></b-dropdown-item>
-          <b-dropdown-item><nuxt-link to="/step1/vr">Virtual Reality</nuxt-link></b-dropdown-item>
-        </b-nav-item-dropdown>
+        <b-nav-item href="https://realityloop.github.io/responsive-vr/">Presentation / Slides</b-nav-item>
+        <b-nav-item href="https://github.com/Realityloop/responsive-vr">Source (Github)</b-nav-item>
       </b-nav>
 
     </b-collapse>
